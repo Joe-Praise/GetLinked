@@ -1,0 +1,80 @@
+.glowContainer {
+  width: 35rem;
+  position: absolute;
+  top: 0%;
+  left: 10%;
+  /* z-index: -2; */
+}
+.glow {
+  width: 100%;
+  opacity: 0.4;
+  transform: rotate(180deg);
+}
+
+/* .leftGlow {
+  width: 35rem;
+  top: 0%;
+  left: -100%;
+  z-index: 1;
+  border: 0.1875rem solid;
+  position: relative;
+}
+.leftOpacity {
+  position: absolute;
+  width: 100%;
+  opacity: 1;
+  transform: rotate(180deg);
+}
+.rigihtGlow {
+  width: 5rem;
+  top: 0%;
+  left: 00%;
+  z-index: 0;
+}
+.rightOpacity {
+  position: absolute;
+  width: 100%;
+  opacity: 1;
+  transform: rotate(180deg);
+} */
+
+.brightStar {
+  position: absolute;
+  object-fit: contain;
+  object-position: 10% 10%;
+  z-index: 0;
+}
+
+.glowBannerImg {
+  width: 18rem;
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
+.glowPrize {
+  opacity: 0.6;
+}
+
+.transformTranslateStar {
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 26.75rem) {
+  .glowContainer {
+    width: 17rem;
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    /* z-index: -1; */
+  }
+}
+
+@media (max-width: 20rem) {
+  .glowContainer {
+    width: 10rem;
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    z-index: 1;
+  }
+}

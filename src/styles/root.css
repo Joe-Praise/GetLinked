@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Unica+One&display=swap");
+* {
+  cursor: none;
+  margin: 0;
+  padding: 0;
+}
+.mainContainer {
+  max-width: 94.5rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+}
+:root {
+  --primary1: rgba(144, 58, 255, 1);
+  --primary2: rgba(254, 52, 185, 1);
+  --dark: rgba(21, 14, 40, 1);
+  --secondary: rgb(144, 58, 255);
+  --tertiary: rgba(212, 52, 254, 1);
+  --darkblend: rgb(14, 5, 42);
+  --lightBlend: rgb(20, 12, 41);
+  --white: #ffffff;
+  --fadedText: #ffffffa5;
+  --textSize: 0.875rem;
+  --tinyFont: 0.6875rem;
+  --h1Size: 2.25rem;
+  --h2Size: 2rem;
+  --h3Size: 1.5rem;
+  --h4Size: 1.1rem;
+}
+.index2 {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.marginTop {
+  margin-top: 2rem;
+}
+
+::-webkit-scrollbar {
+  height: 0.3125rem;
+  width: 0.3125rem; /* Adjust the width of the scroll bar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scroll bar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary); /* Color of the scroll bar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(var(--tertiary)); /* Color of the scroll bar thumb on hover */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.wrapper {
+  width: 100%;
+  color: var(--white);
+}
+p {
+  font-size: var(--textSize);
+}
+h3 {
+  font-size: var(--h3Size);
+}
+
+.sectionBorderBottom {
+  border-bottom: 0.0625rem solid #ffffff23;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
+  background: rgba(20, 12, 41, 0.571);
+}

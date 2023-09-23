@@ -1,0 +1,167 @@
+.contactUsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 4rem 0;
+  /* height: 60vh; */
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.contactInfoContainer {
+  flex-basis: 40%;
+}
+
+.contactHeader {
+  color: var(--tertiary);
+  font-weight: 900;
+}
+
+.contactP {
+  width: 20%;
+  margin: 1rem 0;
+}
+
+.openTime {
+  width: 50%;
+}
+.socialMedialWrapper {
+  margin: 2rem 0;
+}
+.socialMedialWrapper p {
+  color: var(--tertiary);
+  font-size: 1rem;
+  font-weight: 900;
+}
+.contactSocialMediaLinks {
+  margin: 1rem 0 0 -0.3125rem;
+  padding: 0;
+  list-style-type: none;
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.contactSocialMediaLinks li {
+  flex-basis: auto;
+}
+.contactSocialMediaLinks li a {
+  display: block;
+}
+.contactSocialMediaLinks li a img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
+.contactFormWrapper {
+  /* position: relative; */
+  flex-basis: 36%;
+  padding: 3rem 2rem 2.5rem 2rem;
+  border-radius: 0.3975rem;
+  background-color: rgba(44, 30, 77, 0.536);
+}
+.contactFormWrapper h3 {
+  color: var(--tertiary);
+  font-size: 1rem;
+  width: 55%;
+  line-height: 1.5;
+  margin: 1rem 0 2rem 1.4rem;
+}
+
+.contactFormWrapper form {
+  width: 90%;
+  margin: 0 auto;
+}
+.inputContainer {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+.inputContainer input,
+.inputContainer textarea {
+  display: block;
+  width: 90%;
+  padding: 0.7rem 0 0.7rem 1rem;
+  border: 0.125rem solid var(--white);
+  background-color: transparent;
+  border-radius: 0.125rem;
+  color: var(--white);
+  outline: none;
+  transition: 0.6s all ease;
+}
+.inputContainer input::placeholder,
+.inputContainer textarea::placeholder {
+  font-weight: 900;
+  color: var(--white);
+  padding-left: 20px;
+  transform: translateY(0%);
+  transition: 0.4s ease all;
+}
+
+.inputContainer input:is(:focus),
+.inputContainer textarea:is(:focus) {
+  border-color: var(--tertiary);
+}
+
+.inputContainer input:is(:hover, :focus)::placeholder,
+.inputContainer textarea:is(:hover, :focus)::placeholder {
+  transform: translateY(-250%);
+  transition: 0.4s ease all;
+}
+
+.contactSUbmitBtnContainer {
+  width: 31%;
+  margin: 0 auto;
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 26.75rem) {
+  .hide {
+    display: block;
+  }
+  .contactInfoContainer {
+    flex-basis: 100%;
+    order: 2;
+  }
+  .contactFormWrapper {
+    order: 1;
+    flex-basis: 100%;
+    padding: 0rem 0rem 2.5rem 0rem;
+    background-color: unset;
+  }
+
+  .contactFormWrapper h3 {
+    color: var(--tertiary);
+    font-size: 1rem;
+    width: 60%;
+    line-height: 1.5;
+    margin: 1rem 0 2rem 1.4rem;
+  }
+
+  .contactFormWrapper p {
+    margin: 1rem 0 2rem 1.4rem;
+    width: 85%;
+  }
+  .contactHeader,
+  .contactP {
+    display: none;
+  }
+  .share {
+    text-align: center;
+    margin: 15px;
+  }
+  .contactSocialMediaLinks {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .contactSUbmitBtnContainer {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
