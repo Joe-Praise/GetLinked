@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import RegisterBtn from "../UI/RegisterBtn";
 import banner from "../images/Title.png";
 import banner2 from "../images/man-wearing-smart-glasses-touching-virtual-screen 1.png";
@@ -20,19 +20,6 @@ const BackgroundImageWrapper = () => {
     { hour: "00", abv: "M" },
     { hour: "00", abv: "S" },
   ];
-
-  const word = ["Igniting", "a Revolution", "in HR Innovation"];
-  let wordIndex = 0;
-  let charIndex = 0;
-
-  const typeEffect = () => {
-    const currentWord = word[wordIndex];
-    const currentChar = currentWord.substring(0, charIndex);
-    console.log(currentChar, currentChar);
-  };
-  useEffect(() => {
-    typeEffect();
-  }, []);
 
   return (
     <section style={{ borderBottom: "1px solid #ffffff23" }}>

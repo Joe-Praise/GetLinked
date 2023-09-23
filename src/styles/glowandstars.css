@@ -3,40 +3,12 @@
   position: absolute;
   top: 0%;
   left: 10%;
-  /* z-index: -2; */
 }
 .glow {
   width: 100%;
   opacity: 0.4;
   transform: rotate(180deg);
 }
-
-/* .leftGlow {
-  width: 35rem;
-  top: 0%;
-  left: -100%;
-  z-index: 1;
-  border: 0.1875rem solid;
-  position: relative;
-}
-.leftOpacity {
-  position: absolute;
-  width: 100%;
-  opacity: 1;
-  transform: rotate(180deg);
-}
-.rigihtGlow {
-  width: 5rem;
-  top: 0%;
-  left: 00%;
-  z-index: 0;
-}
-.rightOpacity {
-  position: absolute;
-  width: 100%;
-  opacity: 1;
-  transform: rotate(180deg);
-} */
 
 .brightStar {
   position: absolute;
@@ -65,7 +37,6 @@
     position: absolute;
     top: 0%;
     left: 10%;
-    /* z-index: -1; */
   }
 }
 

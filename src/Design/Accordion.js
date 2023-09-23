@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
-const Accordion = ({ info, close, open, question, children }) => {
+const Accordion = ({ info, question }) => {
   const [reveal, setReveal] = useState(true);
 
   return (

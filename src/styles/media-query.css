@@ -76,7 +76,6 @@
     width: 84%;
     margin: 0 auto;
     text-align: center;
-    /* background-color: red; */
     display: block;
   }
 
@@ -192,7 +191,6 @@
 
   .sponsorsDisplayWrapper {
     width: 100%;
-    /* justify-content: space-around; */
     margin: 0 auto 0.5rem auto;
   }
   .sponsorDisplayBorder {

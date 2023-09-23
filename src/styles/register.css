@@ -4,7 +4,6 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 1.3rem 0;
-  /* min-height: 50vh; */
   width: 90%;
   margin: 0 auto;
   position: relative;
@@ -138,7 +137,6 @@ input:-webkit-autofill:active {
 }
 
 .dropicon {
-  /* margin-left: auto; */
   padding: 0 0.5rem;
   display: inline-block;
   margin-left: auto;
@@ -172,11 +170,9 @@ input:-webkit-autofill:active {
 
 .regsiterImgContainer img {
   width: 55%;
-  /* background-color: #fff; */
   height: 80%;
 }
 .regsiterImgContainer img:first-child {
-  /* width: 100%; */
   top: 40%;
   left: 30%;
 }
