@@ -43,13 +43,13 @@ const Navigation = () => {
       id: "close1",
     },
     {
-      name: "Timeline",
-      route: "timeline",
+      name: "Overview",
+      route: "overview",
       className: "navitem",
     },
     {
-      name: "Overview",
-      route: "overview",
+      name: "Timeline",
+      route: "timeline",
       className: "navitem",
     },
     {
