@@ -32,7 +32,7 @@ Note: its responsive over various screen sizes(mobile and laptops)
 
 ### Deployed Link
 
-incoming...
+[https://joegetlinked.onrender.com]
 
 ### GitHub Username
 
