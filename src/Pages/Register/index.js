@@ -211,7 +211,7 @@ const RegisterForm = ({ onOpenModal }) => {
         phone_number: "",
         team_name: "",
         project_topic: "",
-        privacy_policy_accepted: null,
+        privacy_policy_accepted: "null",
       });
 
       setSelectvalue({
@@ -521,7 +521,6 @@ const RegisterForm = ({ onOpenModal }) => {
               type="checkbox"
               name="privacy_policy_accepted"
               id="check"
-              value={application.privacy_policy_accepted}
               onChange={inputChangeHandler}
             />
             <label htmlFor="check">
