@@ -139,7 +139,6 @@ const ContactForm = () => {
     setContactInfo({ ...contactInfo, [name]: value.toLowerCase() });
   };
 
-  console.log(contactInfo);
   // form validation handler
   const handleValidation = (e) => {
     e.preventDefault();

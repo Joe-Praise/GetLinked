@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import RegisterBtn from "../UI/RegisterBtn";
 import banner from "../images/Title.png";
 import banner2 from "../images/man-wearing-smart-glasses-touching-virtual-screen 1.png";
@@ -15,10 +15,11 @@ import { GlideInLeft, GlideInRight } from "./Reveal";
 const BackgroundImageWrapper = () => {
   const ctx = useContext(AppData);
   const [, setCursorVariant] = ctx.getCursorVariant;
+  const { days, hours, minutes, seconds } = Timer("2023-12-31T10:12:50.5000z");
   const time = [
-    { hour: "00", abv: "H" },
-    { hour: "00", abv: "M" },
-    { hour: "00", abv: "S" },
+    { hour: hours, abv: "H" },
+    { hour: minutes, abv: "M" },
+    { hour: seconds, abv: "S" },
   ];
 
   return (
@@ -87,3 +88,28 @@ const BackgroundImageWrapper = () => {
 };
 
 export default BackgroundImageWrapper;
+
+const SECOND = 1000;
+const MINUTE = SECOND * 60;
+const HOUR = MINUTE * 60;
+const DAY = HOUR * 24;
+
+function Timer(deadline, interval = SECOND) {
+  const [timespan, setTimespan] = useState(new Date(deadline) - Date.now());
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTimespan(new Date(deadline) - Date.now());
+    }, interval);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [deadline, interval]);
+
+  return {
+    days: Math.floor(timespan / DAY),
+    hours: Math.floor((timespan / HOUR) % 24),
+    minutes: Math.floor((timespan / MINUTE) % 60),
+    seconds: Math.floor((timespan / SECOND) % 60),
+  };
+}
