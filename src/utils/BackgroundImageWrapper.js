@@ -12,16 +12,24 @@ import star from "../images/star.png";
 import fadedstar from "../images/faded star.png";
 import { GlideInLeft, GlideInRight } from "./Reveal";
 import { TypewriterEffect } from "./TextGenerate";
+import { useNavigate } from "react-router-dom";
 
 const BackgroundImageWrapper = () => {
   const ctx = useContext(AppData);
+  const navigate = useNavigate();
   const [, setCursorVariant] = ctx.getCursorVariant;
   const { days, hours, minutes, seconds } = Timer("2023-12-31T10:12:50.5000z");
+
   const time = [
     { hour: hours, abv: "H" },
     { hour: minutes, abv: "M" },
     { hour: seconds, abv: "S" },
   ];
+
+  const navigateRegister = (e) => {
+    e.preventDefault();
+    navigate("/register");
+  };
 
   return (
     <section style={{ borderBottom: "1px solid #ffffff23" }}>
@@ -51,6 +59,7 @@ const BackgroundImageWrapper = () => {
             </p>
             <div className="bgRegisterBtn">
               <RegisterBtn
+                onClick={navigateRegister}
                 value={"Register"}
                 className={"Register"}
                 size={"9rem"}
