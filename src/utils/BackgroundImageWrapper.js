@@ -11,6 +11,7 @@ import Star from "../UI/Star";
 import star from "../images/star.png";
 import fadedstar from "../images/faded star.png";
 import { GlideInLeft, GlideInRight } from "./Reveal";
+import { TypewriterEffect } from "./TextGenerate";
 
 const BackgroundImageWrapper = () => {
   const ctx = useContext(AppData);
@@ -26,7 +27,9 @@ const BackgroundImageWrapper = () => {
     <section style={{ borderBottom: "1px solid #ffffff23" }}>
       <div className="bannerSection">
         <div className="typeWriterWrapper">
-          <p className="typewriter">Igniting a Revolution in HR Innovation</p>
+          <p className="typewriter">
+            <TypewriterEffect />
+          </p>
           <img src={underline} alt="" className="underline" />
         </div>
         <GlideInLeft>
@@ -68,7 +71,7 @@ const BackgroundImageWrapper = () => {
             <GlowSpot className={"glowContainer glowBannerImg"} />
             <div className="bgTypeWriterWrapper">
               <p className="typewriter">
-                Igniting a Revolution in HR Innovation
+                <TypewriterEffect />
               </p>
               <img src={underline} alt="" className="underline" />
             </div>
