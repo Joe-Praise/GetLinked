@@ -1,3 +1,9 @@
+.active {
+  position: sticky;
+  top: 0;
+  background-color: var(--dark);
+  z-index: 25;
+}
 .nav {
   height: 3.625rem;
   width: 100%;

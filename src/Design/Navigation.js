@@ -15,6 +15,15 @@ const Navigation = () => {
   const ctx = useContext(AppData);
   const [, setCursorVariant] = ctx.getCursorVariant;
   const [modal, setModal] = useState(false);
+  const [navBar, setNavBar] = useState(false);
+
+  const stickyNavbar = () => {
+    console.log(window.scrollY);
+    if (window.scrollY >= 58) setNavBar(true);
+    else setNavBar(false);
+  };
+
+  window.addEventListener("scroll", stickyNavbar);
 
   const closeMenuHandler = () => {
     if (!modal) return;
@@ -72,7 +81,7 @@ const Navigation = () => {
   ];
 
   return (
-    <header>
+    <header className={navBar ? "active" : ""}>
       <nav className="nav">
         <figure
           className="logo"
