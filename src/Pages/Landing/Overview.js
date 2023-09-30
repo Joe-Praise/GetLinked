@@ -1,5 +1,4 @@
 import React from "react";
-import Star from "../../UI/Star";
 import bigIdea from "../../images/The big idea.png";
 import rules from "../../images/Rules and guidelines.png";
 import judging from "../../images/Judging criteria.png";
@@ -9,14 +8,15 @@ import coloredStar2 from "../../images/sata gra.png";
 import fadedstar from "../../images/faded star.png";
 import whiteStar from "../../images/star.png";
 import arrow from "../../images/arrow.png";
-import Accordion from "../..//Design/Accordion";
 import ellipse from "../../images/Ellipse 2.png";
-import RegisterBtn from "../../UI/RegisterBtn";
 import q1 from "../../images/question1.png";
 import q2 from "../../images/question2.png";
-import GlowSpot from "../../UI/GlowSpot";
 import Wrapper from "../../UI/Wrapper";
 import { Reveal } from "../../utils/Reveal";
+import OverviewImg from "../../Design/OverviewImg";
+import OverviewText from "../../Design/Overview";
+import Judging from "../../Design/Judging";
+import FAQs from "../../Design/FAQs";
 const Overview = () => {
   const info = [
     {
@@ -357,107 +357,3 @@ const Overview = () => {
 };
 
 export default Overview;
-
-export const OverviewImg = ({ image, star, glowClass, glowOpacity }) => {
-  return (
-    <>
-      {star?.map((el) => {
-        return el?.location === "img" ? (
-          <Star
-            image={el.star}
-            {...el.position}
-            size={el.size}
-            className={el.className || ""}
-            key={el.id}
-          />
-        ) : null;
-      })}
-      <GlowSpot className={`${glowClass}`} glowOpacity={glowOpacity} />
-
-      <img src={image} alt="random overview illustration" className="index2" />
-    </>
-  );
-};
-
-const OverviewText = ({ h3value, colorH3, text, star }) => {
-  return (
-    <div className="overviewTextWrapper">
-      {star?.map((el) => {
-        return el?.location === "text" ? (
-          <Star image={el.star} {...el.position} key={el.id} />
-        ) : null;
-      })}
-      <div>
-        <div>
-          <GlowSpot className={"glowContainer"} />
-
-          <h3>
-            {h3value}
-            <span>{colorH3}</span>
-          </h3>
-          <p>{text}</p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const Judging = ({ star, h3value, colorH3, text, attributes }) => {
-  return (
-    <div className="overviewTextWrapper ">
-      <div>
-        <div>
-          <h3>
-            {h3value}
-            <span>{colorH3}</span>
-          </h3>
-          <p>{text}</p>
-        </div>
-      </div>
-      <ul className="overviewTextLi listStyleNone">
-        {attributes?.map((el) => {
-          return (
-            <li key={el.id}>
-              <p>
-                {el.title} : <span className="judgingSpan">{el.info}</span>
-              </p>
-            </li>
-          );
-        })}
-      </ul>
-      <div className="marginTop judgingBtn">
-        <RegisterBtn value={"Read More"} className={"Register"} size={"8rem"} />
-      </div>
-    </div>
-  );
-};
-
-export const FAQs = ({ h3value, colorH3, text, accordion, star }) => {
-  return (
-    <div className="overviewTextWrapper " id="faqs">
-      {star?.map((el) => {
-        return el?.location === "text" ? (
-          <Star image={el.star} {...el.position} key={el.id} />
-        ) : null;
-      })}
-      <div className="fqaHeader">
-        <div>
-          <h3>
-            {h3value}
-            <span>{colorH3}</span>
-          </h3>
-          <p>{text}</p>
-        </div>
-      </div>
-      <div>
-        <ul className="accordion listStyleNone">
-          {accordion.map((el) => {
-            return (
-              <Accordion info={el.info} question={el.question} key={el.id} />
-            );
-          })}
-        </ul>
-      </div>
-    </div>
-  );
-};

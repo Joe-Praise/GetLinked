@@ -1,5 +1,4 @@
 import React from "react";
-import { OverviewImg } from "./Overview";
 import Wrapper from "../../UI/Wrapper";
 import cup from "../../images/cup.png";
 import goldMedal from "../../images/gold_medal 1.png";
@@ -10,6 +9,7 @@ import fadedstar from "../../images/faded star.png";
 import whiteStar from "../../images/star.png";
 import coloredStar2 from "../../images/sata gra.png";
 import { GlideInLeft, GlideInRight } from "../../utils/Reveal";
+import OverviewImg from "../../Design/OverviewImg";
 
 const star = [
   {

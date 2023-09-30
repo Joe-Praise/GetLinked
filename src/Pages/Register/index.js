@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import api from "../../utils/axiosCreate";
 import Wrapper from "../../UI/Wrapper";
-import { OverviewImg } from "../Landing/Overview";
 import graphicsGuy from "../../images/3d-graphic-designer-showing-thumbs-up-png 1.png";
 import coloredStar2 from "../../images/sata gra.png";
 import coloredStar from "../../images/star pu.png";
@@ -14,6 +13,7 @@ import dropDownIcon from "../../images/dropdown icon.png";
 import Validation from "../../utils/validation";
 import RegisterModal from "./RegisterModal";
 import { GlideInRight } from "../../utils/Reveal";
+import OverviewImg from "../../Design/OverviewImg";
 
 const graphicGuyDetails = [
   {
