@@ -155,8 +155,8 @@ const ContactForm = () => {
   // form submittion
   const submitFormHandler = async (values) => {
     try {
-      const response = await api.post("/hackathon/contact-form", values);
-      console.log(response.data);
+      await api.post("/hackathon/contact-form", values);
+
       // reset state
       setContactInfo({
         email: "",

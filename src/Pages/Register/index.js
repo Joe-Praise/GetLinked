@@ -201,8 +201,7 @@ const RegisterForm = ({ onOpenModal }) => {
   // form submittion
   const submitFormHandler = async (values) => {
     try {
-      const response = await api.post("/hackathon/registration", values);
-      console.log(response.data);
+      await api.post("/hackathon/registration", values);
       onOpenModal();
 
       // reset state
@@ -371,7 +370,6 @@ const RegisterForm = ({ onOpenModal }) => {
         const response = await api.get(`/hackathon/categories-list`);
         const transformedData = transformCategory(response.data);
         setCategory(transformedData);
-        console.log(transformedData);
       } catch (err) {
         if (err.response) {
           console.log(err.response.data);

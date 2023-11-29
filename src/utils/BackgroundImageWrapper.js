@@ -35,9 +35,9 @@ const BackgroundImageWrapper = () => {
     <section style={{ borderBottom: "1px solid #ffffff23" }}>
       <div className="bannerSection">
         <div className="typeWriterWrapper">
-          <p className="typewriter">
+          <div className="typewriter">
             <TypewriterEffect />
-          </p>
+          </div>
           <img src={underline} alt="" className="underline" />
         </div>
         <GlideInLeft>
@@ -79,9 +79,9 @@ const BackgroundImageWrapper = () => {
           <div className="right">
             <GlowSpot className={"glowContainer glowBannerImg"} />
             <div className="bgTypeWriterWrapper">
-              <p className="typewriter">
+              <div className="typewriter">
                 <TypewriterEffect />
-              </p>
+              </div>
               <img src={underline} alt="" className="underline" />
             </div>
             <figure>

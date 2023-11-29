@@ -1,7 +1,6 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import * as Scroll from "react-scroll";
-import { NavLink } from "react-router-dom";
-
+import { NavLink, useLocation } from "react-router-dom";
 import logo from "../images/getlinked.png";
 import ReactDOM from "react-dom";
 import { AppData } from "../Context";
@@ -10,15 +9,16 @@ import close from "../images/close btn.png";
 import openMenu from "../images/Vector (5).png";
 
 const Navigation = () => {
+  const location = useLocation();
   const Link = Scroll.Link;
   const menu = useRef();
   const ctx = useContext(AppData);
   const [, setCursorVariant] = ctx.getCursorVariant;
   const [modal, setModal] = useState(false);
   const [navBar, setNavBar] = useState(false);
+  const [returnHome, setReturnHome] = useState(false);
 
   const stickyNavbar = () => {
-    console.log(window.scrollY);
     if (window.scrollY >= 58) setNavBar(true);
     else setNavBar(false);
   };
@@ -50,6 +50,7 @@ const Navigation = () => {
       onClick: closeMenuHandler,
       className: "menuBtn",
       id: "close1",
+      route: "",
     },
     {
       name: "Overview",
@@ -80,6 +81,19 @@ const Navigation = () => {
     },
   ];
 
+  useEffect(() => {
+    // check if location.pathname is equal to
+    // either "/register" || "/contact"
+    if (location.pathname === "/register" || location.pathname === "/contact") {
+      // if yes set returnHome to true
+      setReturnHome(true);
+    } else {
+      // set returnHome to false
+      setReturnHome(false);
+    }
+    // run this check when the pathname changes
+  }, [location.pathname]);
+
   return (
     <header className={navBar ? "active" : ""}>
       <nav className="nav">
@@ -102,6 +116,7 @@ const Navigation = () => {
                 className={el.className}
                 onClick={el.onClick}
                 key={el.id}
+                // add animation effect when on hover
                 onMouseEnter={() => textEnter(setCursorVariant, "star")}
                 onMouseLeave={() => textLeave(setCursorVariant, "default")}
               >
@@ -113,6 +128,8 @@ const Navigation = () => {
                 onMouseEnter={() => textEnter(setCursorVariant, "link")}
                 onMouseLeave={() => textLeave(setCursorVariant, "default")}
               >
+                {/* if element has navLink field  */}
+                {/* setup a navlink for routing */}
                 {el.navLink ? (
                   <NavLink
                     className={({ isActive }) =>
@@ -124,7 +141,16 @@ const Navigation = () => {
                   >
                     {el.name}
                   </NavLink>
+                ) : // if url contains /register or /contact
+                // make scroll btns route to /
+                returnHome ? (
+                  <NavLink className={el.className} to={"/"}>
+                    {el.name}
+                  </NavLink>
                 ) : (
+                  // else
+                  // url is on /
+                  // make btns scroll to each section and not navigate
                   <Link
                     className={el.className}
                     to={el.route}
