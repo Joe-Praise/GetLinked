@@ -20,12 +20,11 @@ const BackgroundImageWrapper = () => {
   const [, setCursorVariant] = ctx.getCursorVariant;
   const { days, hours, minutes, seconds } = Timer("2024-12-31T10:12:50.5000z");
 
-  const period = [
-    { hour: Number(hours), abv: "H" },
-    { hour: Number(minutes), abv: "M" },
-    { hour: Number(seconds), abv: "S" },
+  const time = [
+    { hour: hours, abv: "H" },
+    { hour: minutes, abv: "M" },
+    { hour: seconds, abv: "S" },
   ];
-  const [time] = useState(period);
 
   const navigateRegister = (e) => {
     e.preventDefault();
@@ -69,7 +68,7 @@ const BackgroundImageWrapper = () => {
             <ul className="timer">
               {time.map((el, i) => (
                 <li className="timerItem" key={i}>
-                  {el.hour}
+                  {Number(el.hour)}
                   <span>{el.abv}</span>
                 </li>
               ))}
