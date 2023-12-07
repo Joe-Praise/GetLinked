@@ -99,7 +99,7 @@
     height: max-content;
     background-color: var(--dark);
     padding: 0 0 1rem 0;
-    z-index: 20;
+    z-index: 30;
   }
 
   .navNavLinksContainer li {
