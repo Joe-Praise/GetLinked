@@ -144,7 +144,11 @@ const Navigation = () => {
                 ) : // if url contains /register or /contact
                 // make scroll btns route to /
                 returnHome ? (
-                  <NavLink className={el.className} to={"/"}>
+                  <NavLink
+                    className={el.className}
+                    to={"/"}
+                    onClick={closeMenuHandler}
+                  >
                     {el.name}
                   </NavLink>
                 ) : (

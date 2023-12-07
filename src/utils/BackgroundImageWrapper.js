@@ -18,13 +18,14 @@ const BackgroundImageWrapper = () => {
   const ctx = useContext(AppData);
   const navigate = useNavigate();
   const [, setCursorVariant] = ctx.getCursorVariant;
-  const { days, hours, minutes, seconds } = Timer("2023-12-31T10:12:50.5000z");
+  const { days, hours, minutes, seconds } = Timer("2024-12-31T10:12:50.5000z");
 
-  const time = [
-    { hour: hours, abv: "H" },
-    { hour: minutes, abv: "M" },
-    { hour: seconds, abv: "S" },
+  const period = [
+    { hour: Number(hours), abv: "H" },
+    { hour: Number(minutes), abv: "M" },
+    { hour: Number(seconds), abv: "S" },
   ];
+  const [time] = useState(period);
 
   const navigateRegister = (e) => {
     e.preventDefault();

@@ -8,6 +8,7 @@
   font-size: 10rem;
 }
 .cursor {
+  display: block;
   background-color: var(--primary2);
   height: 32px;
   width: 32px;
@@ -17,4 +18,10 @@
   left: 0;
   pointer-events: none;
   z-index: 30;
+}
+
+@media (max-width: 26.75rem) {
+  .cursor {
+    display: none;
+  }
 }
