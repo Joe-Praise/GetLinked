@@ -20,7 +20,7 @@ const BackgroundImageWrapper = () => {
   const navigate = useNavigate();
   const [, setCursorVariant] = ctx.getCursorVariant;
   const { days, hours, minutes, seconds } = useCountDown(
-    "2024-12-31T10:12:50.5000z"
+    new Date("December 31, 2024 23:59:59")
   );
 
   const time = [
