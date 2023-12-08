@@ -1,17 +1,24 @@
 import { useEffect, useState } from "react";
 
-const SECOND = 1000;
-const MINUTE = SECOND * 60;
-const HOUR = MINUTE * 60;
-const DAY = HOUR * 24;
 export default function useCountDown(deadline, interval = 1000) {
-  const [timespan, setTimespan] = useState(
-    new Date(deadline).getTime() - new Date().getTime()
-  );
+  const calculateTimeRemaining = () => {
+    const now = new Date();
+    const difference = new Date(deadline) - now;
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    return { days, hours, minutes, seconds };
+  };
+  const [timeRemaing, setTimeRemaining] = useState(calculateTimeRemaining());
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setTimespan(new Date(deadline).getTime() - new Date().getTime());
+      setTimeRemaining(calculateTimeRemaining);
     }, interval);
     return () => {
       clearInterval(intervalId);
@@ -19,9 +26,9 @@ export default function useCountDown(deadline, interval = 1000) {
   }, [deadline, interval]);
 
   return {
-    days: Math.floor(timespan / DAY),
-    hours: Math.floor((timespan / HOUR) % 24),
-    minutes: Math.floor((timespan / MINUTE) % 60),
-    seconds: Math.floor((timespan / SECOND) % 60),
+    days: timeRemaing.days,
+    hours: timeRemaing.hours,
+    minutes: timeRemaing.minutes,
+    seconds: timeRemaing.seconds,
   };
 }
